@@ -20,5 +20,7 @@ int main()
 { 
     GfG obj; 
     // prints value of i 
-    cout << obj.i; 
+    obj.i+=1;
+    GfG obj2;
+    cout << obj2.i<<endl; 
 } 
