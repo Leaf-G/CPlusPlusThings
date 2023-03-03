@@ -2,15 +2,11 @@
 
 [English version is here](./README_EN.md)
 
-
 感谢各位对《C++ 那些事》的支持，现将内容也同步至网站，可以打开网站直接阅读~欢迎大家 star、转发、PR。
 
 因服务器到期，暂时关闭以下站点，请大家阅读仓库即可，感谢支持。
 
-
 > ~~[直通点](https://light-city.club/sc/)~~
-
-
 
 ### 关于作者
 
@@ -24,22 +20,18 @@
 
 ---
 
-
 另外，下面是我自己建立的知识星球，会带大家做一些小项目以及源码解读等方面成长。
 
 ![](https://www.hualigs.cn/image/60a24728bb736.jpg)
-
 
 ### 项目运行
 
 - **代码环境**
 
   Ubuntu 18.04
-
 - **编辑工具**
 
   CLion
-
 - **编译器**
 
 > gcc/g++
@@ -51,12 +43,12 @@
 - 中文名：**C++ 那些事**
 - 英文名：**Stories About C Plus Plus**
 
-这是一个适合初学者从<u>**入门到进阶**</u>的仓库，解决了<u>**面试者与学习者**</u>想要<u>**深入 C++**</u> 及如何<u>**入坑 C++**</u> 的问题。除此之外，本仓库拓展了更加深入的源码分析，多线程并发等的知识，是一个比较全面的 C++ 学习从入门到进阶提升的仓库。
+这是一个适合初学者从`<u>`**入门到进阶**`</u>`的仓库，解决了`<u>`**面试者与学习者**`</u>`想要`<u>`**深入 C++**`</u>` 及如何`<u>`**入坑 C++**`</u>` 的问题。除此之外，本仓库拓展了更加深入的源码分析，多线程并发等的知识，是一个比较全面的 C++ 学习从入门到进阶提升的仓库。
 
 ### 1.基础进阶
 
-- [`const` 那些事](./basic_content/const)
-- [`static` 那些事](./basic_content/static)
+- [`const` 那些事](basic_content/const/README.md)
+- [`static` 那些事](basic_content/static/README.md)
 - [`this` 那些事](./basic_content/this)
 - [`inline` 那些事](./basic_content/inline)
 - [`sizeof` 那些事](./basic_content/sizeof)
@@ -85,43 +77,43 @@
 
 #### 2.1 [10 日狂练](./practical_exercises/10_day_practice)
 
-- [x] [day1](practical_exercises/10_day_practice/day1)
+- [X] [day1](practical_exercises/10_day_practice/day1)
 
 基本 c++ 语法
 
-- [x] [day2](practical_exercises/10_day_practice/day2)
+- [X] [day2](practical_exercises/10_day_practice/day2)
 
 递归、结构体、枚举、静态变量等
 
-- [x] [day3](practical_exercises/10_day_practice/day3)
+- [X] [day3](practical_exercises/10_day_practice/day3)
 
 函数
 
-- [x] [day4](practical_exercises/10_day_practice/day4)
+- [X] [day4](practical_exercises/10_day_practice/day4)
 
 函数深入
 
-- [x] [day5](practical_exercises/10_day_practice/day5)
+- [X] [day5](practical_exercises/10_day_practice/day5)
 
 继承多态
 
-- [x] [day6](practical_exercises/10_day_practice/day6)
+- [X] [day6](practical_exercises/10_day_practice/day6)
 
 虚函数、抽象类
 
-- [x] [day7](practical_exercises/10_day_practice/day7)
+- [X] [day7](practical_exercises/10_day_practice/day7)
 
 运算符重载
 
-- [x] [day8](practical_exercises/10_day_practice/day8)
+- [X] [day8](practical_exercises/10_day_practice/day8)
 
 模板与 STL
 
-- [x] [day9](practical_exercises/10_day_practice/day9)
+- [X] [day9](practical_exercises/10_day_practice/day9)
 
 异常
 
-- [x] [day10](practical_exercises/10_day_practice/day10)
+- [X] [day10](practical_exercises/10_day_practice/day10)
 
 文件与流
 
@@ -160,24 +152,17 @@ C++2.0 是一个简称，意为「现代 C++」，包括 C++11/14/17/20。
 #### 3.1 [C++11 新特性](./c++2.0/c++11)
 
 - [Variadic Templates](./c++2.0/c++11/variadic)
-
 - Spaces in Template Expressions
 
   ```cpp
   vector<list<int> > //ok in each C++ version
   vector<list<int>> // before c++ 11 error error: ‘>>’ should be ‘> >’ within a nested template argument list,c++11后可以正常通过
   ```
-
 - [nullptr and nullptr_t](./c++2.0/c++11/nullptr.cpp)
-
 - [Automatic Type Deduction with auto](./c++2.0/c++11/auto.cpp)
-
 - [Uniform Initialization ](./c++2.0/c++11/uniform_initialization.cpp)
-
 - [initializer_list](./c++2.0/c++11/initializer.cpp)
-
 - [explicit for ctors taking more than one argument](./c++2.0/c++11/explicit.cpp)
-
 - [range-based for statement](./c++2.0/c++11/auto.cpp)
 
   ```cpp
@@ -185,43 +170,29 @@ C++2.0 是一个简称，意为「现代 C++」，包括 C++11/14/17/20。
       statement
   }
   ```
-
 - [=default,=delete](./c++2.0/c++11/default_delete.cpp)
 
   如果你自行定义了一个 `ctor`, 那么编译器就不会给你一个 `default ctor`
   如果强制加上 `=default`, 就可以重新获得并使用 `default ctor`.
-
 - Alias(化名) Template (template typedef)
 
   - [alias.cpp](./c++2.0/c++11/alias.cpp)
   - [template_template.cpp](./c++2.0/c++11/template_template.cpp)
-
 - [template template parameter](./c++2.0/template_template.cpp)
-
 - [type alias](./c++2.0/c++11/type_alias.cpp)
-
 - [noexcept](./c++2.0/c++11/noexcept.cpp)
-
 - [override](./c++2.0/c++11/override.cpp)
-
 - [final](./c++2.0/c++11/final.cpp)
-
 - [decltype](./c++2.0/c++11/decltype.cpp)
-
 - [lambda](./c++2.0/c++11/lambda.cpp)
-
 - [Rvalue reference](./c++2.0/c++11/rvalue.cpp)
-
 - [move aware class](./c++2.0/c++11/move.cpp)
-
 - 容器-结构与分类
 
   - (1) 序列式容器包括：`array`(C++2.0 新引入),`vector`,`deque`,`list`,`forward_list`(C++2.0 新引入)
   - (2) 关联式容器包括：`set/multiset`,`map/multimap`
   - (3) 无序容器(C++2.0 新引入,更换原先 `hash_xxx` 为 `unordered_xxx`)包括：`unordered_map/unordered_multimap,unordered_set/unordered_multiset`
-
 - [Hash Function](./c++2.0/c++11/hash.cpp)
-
 - [tuple](./c++2.0/c++11/tuple.cpp)
 
   学习资料：https://www.bilibili.com/video/av51863195?from=search&seid=3610634846288253061
@@ -345,13 +316,14 @@ map<int, int> mp{
 
 #### 9.3 观察编译过程变化
 
--  [https://cppinsights.io](https://cppinsights.io/)
+- [https://cppinsights.io](https://cppinsights.io/)
 
 #### 9.4 C++ 的 Debug 工具 dbg-macro
 
 - [C++ 的 Debug 工具 dbg-macro](./tool/C++的Debug工具dbg-macro.md)
 
 #### 9.5 在 Linux 上的 Debug 工具 rr - 拥有回到过去的能力
+
 - [用 rr 来进行 debug](./tool/用rr来进行debug.md)
 
 ### 10.拓展部分
@@ -362,15 +334,11 @@ map<int, int> mp{
 
 ### 11.贡献者
 
-
-
 | 贡献人  | 地址                          |
 | ------- | ----------------------------- |
 | 光城    | https://github.com/Light-City |
 | ChungZH | https://github.com/ChungZH    |
 | xliu79  | https://github.com/xliu79     |
-
-
 
 ### 12.赞助我
 
@@ -390,4 +358,3 @@ map<int, int> mp{
     </tr>
   </tbody>
 </table>
-

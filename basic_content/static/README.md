@@ -1,11 +1,5 @@
 # static那些事
 
-## 关于作者
-
-微信公众号：
-
-![](../img/wechat.jpg)
-
 当与不同类型一起使用时，Static关键字具有不同的含义。我们可以使用static关键字：
 
 **静态变量：** 函数中的变量，类中的变量
@@ -30,7 +24,7 @@ void demo()
 	// static variable 
 	static int count = 0; 
 	cout << count << " "; 
-	
+
 	// value is updated and 
 	// will be carried to next 
 	// function calls 
@@ -66,7 +60,7 @@ class Apple
 { 
 public: 
 	static int i; 
-	
+
 	Apple() 
 	{ 
 		// Do nothing 
@@ -79,7 +73,7 @@ Apple obj1;
 Apple obj2; 
 obj1.i =2; 
 obj2.i = 3; 
-	
+
 // prints value of i 
 cout << obj1.i<<" "<<obj2.i; 
 } 
@@ -96,7 +90,7 @@ class Apple
 { 
 public: 
 	static int i; 
-	
+
 	Apple() 
 	{ 
 		// Do nothing 
@@ -158,7 +152,6 @@ int main()
 
 ```
 
-
 输出：
 
 ```c++
@@ -200,7 +193,6 @@ int main()
 } 
 
 ```
-
 
 输出：
 
@@ -248,6 +240,7 @@ Welcome to Apple!
 
 **限定访问范围**
 static还有限定访问范围的作用（类似于匿名名字空间）。来自issue:https://github.com/Light-City/CPlusPlusThings/issues/142
+
 ```cpp
 // source1.cpp
 extern void sayHello();
@@ -266,7 +259,9 @@ void sayHello()
     printf("%s", msg);
 }
 ```
+
 g++对于上面两个代码文件是可以正常编译并且打印Hello World!，但如果给source1.cpp中的msg加上static，则会导致undefined reference to 'msg'的编译错误：
+
 ```cpp
 // source1.cpp
 extern void sayHello();
