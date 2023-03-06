@@ -1,9 +1,3 @@
-## 关于作者：
-
-个人公众号：
-
-![](../img/wechat.jpg)
-
 ## Bit field 是什么？
 
 “ 位域 “ 或 “ 位段 “(Bit field)为一种数据结构，可以把数据以位的形式紧凑的储存，并允许程序员对此结构的位进行操作。这种数据结构的一个好处是它可以使数据单元节省储存空间，当程序需要成千上万个数据单元时，这种方法就显得尤为重要。第二个好处是位段可以很方便的访问一个整数值的部分内容从而可以简化程序源代码。而这种数据结构的缺点在于，位段实现依赖于具体的机器和系统，在不同的平台可能有不同的结果，这导致了位段在本质上是不可移植的。
@@ -23,14 +17,12 @@ struct bit_field_name
 };
 ```
 
-
-
-| Elements       | Description                                                  |
-| -------------- | ------------------------------------------------------------ |
-| bit_field_name | 位域结构名                                                   |
+| Elements       | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| bit_field_name | 位域结构名                                                    |
 | type           | 位域成员的类型，必须为 int、signed int 或者 unsigned int 类型 |
-| member_name    | 位域成员名                                                   |
-| width          | 规定成员所占的位数                                           |
+| member_name    | 位域成员名                                                    |
+| width          | 规定成员所占的位数                                            |
 
 例如声明如下一个位域:
 
@@ -51,7 +43,6 @@ prcode.code1 = 0;
 prcode.code2 = 3;
 procde.code3 = 102;
 ```
-
 
 赋值时要注意值的大小不能超过位域成员的容量，例如 prcode.code3 为 8 Bits 的位域成员，其容量为 2^8 = 256，即赋值范围应为 [0,255]。
 
@@ -86,9 +77,7 @@ struct stuff
 };
 ```
 
-
-
-`field1` + `field2` = 34 Bits，超出 32 Bits, 编译器会将`field2`移位至下一个 unsigned int 单元存放， stuff.field1 和 stuff.field2 之间会留下一个 2 Bits 的空隙， stuff.field3 紧跟在 stuff.field2 之后，该结构现在大小为 2 * 32 = 64 Bits。
+`field1` + `field2` = 34 Bits，超出 32 Bits, 编译器会将 `field2`移位至下一个 unsigned int 单元存放， stuff.field1 和 stuff.field2 之间会留下一个 2 Bits 的空隙， stuff.field3 紧跟在 stuff.field2 之后，该结构现在大小为 2 * 32 = 64 Bits。
 
 这个空洞可以用之前提到的未命名的位域成员填充，我们也可以使用一个宽度为 0 的未命名位域成员令下一位域成员与下一个整数对齐。
 例如:
@@ -103,8 +92,6 @@ struct stuff
 	unsigned int field3: 3; 
 };
 ```
-
-
 
 这里 stuff.field1 与 stuff.field2 之间有一个 2 Bits 的空隙，stuff.field3 则存储在下一个 unsigned int 中，该结构现在大小为 3 * 32 = 96 Bits。
 
@@ -161,12 +148,10 @@ int* p = (int *) &b1;  // 将 "位域结构体的地址" 映射至 "整形（int
 
 ```
 union u_box {
-  struct box st_box;     
+  struct box st_box;   
   unsigned int ui_box;
 };
 ```
-
-
 
 x86 系统中 unsigned int 和 box 都为 32 Bits, 通过该联合使 st_box 和 ui_box 共享一块内存。具体位域中哪一位与 unsigned int 哪一位相对应，取决于编译器和硬件。
 利用联合将位域归零，代码如下：
@@ -176,4 +161,4 @@ union u_box u;
 u.ui_box = 0;
 ```
 
-> 学习参考自：<http://www.yuan-ji.me/C-C-%E4%BD%8D%E5%9F%9F-Bit-fields-%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/>
+> 学习参考自：[http://www.yuan-ji.me/C-C-%E4%BD%8D%E5%9F%9F-Bit-fields-%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/](http://www.yuan-ji.me/C-C-%E4%BD%8D%E5%9F%9F-Bit-fields-%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/)

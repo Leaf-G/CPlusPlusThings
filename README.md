@@ -28,26 +28,30 @@
 - [`this` 那些事](basic_content/this/README.md)[-&gt;git](basic_content/this)
 - [`inline` 那些事](./basic_content/inline/README.md)[-&gt;git](./basic_content/inline)
 - [`sizeof` 那些事](./basic_content/sizeof/README.md)[-&gt;git](./basic_content/sizeof/)
-- [函数指针那些事](./basic_content/func_pointer/README.md)[-&gt;git](./basic_content/func_pointe)
-- [纯虚函数和抽象类那些事](./basic_content/abstract)[-&gt;git](basic_content/const)
-- [`vptr_vtable` 那些事](./basic_content/vptr_vtable)[-&gt;git](basic_content/const)
-- [`virtual` 那些事](./basic_content/virtual)[-&gt;git](basic_content/const)
-- [`volatile` 那些事](./basic_content/volatile)[-&gt;git](basic_content/const)
-- [`assert` 那些事](./basic_content/assert)[-&gt;git](basic_content/const)
-- [位域那些事](./basic_content/bit)[-&gt;git](basic_content/const)
-- [`extern` 那些事](./basic_content/extern)[-&gt;git](basic_content/const)
-- [`struct` 那些事](./basic_content/struct)[-&gt;git](basic_content/const)
-- [`struct` 与 `class` 那些事](./basic_content/struct_class)[-&gt;git](basic_content/const)
-- [`union` 那些事](./basic_content/union)[-&gt;git](basic_content/const)
-- [`c` 实现 `c++` 多态那些事](./basic_content/c_poly)[-&gt;git](basic_content/const)
-- [`explicit` 那些事](./basic_content/explicit)[-&gt;git](basic_content/const)
-- [`friend` 那些事](./basic_content/friend)[-&gt;git](basic_content/const)
-- [`using` 那些事](./basic_content/using)[-&gt;git](basic_content/const)
-- [`::` 那些事](./basic_content/maohao)[-&gt;git](basic_content/const)
-- [`enum` 那些事](./basic_content/enum)[-&gt;git](basic_content/const)
-- [`decltype` 那些事](./basic_content/decltype)[-&gt;git](basic_content/const)
-- [引用与指针那些事](./basic_content/pointer_refer)[-&gt;git](basic_content/const)
-- [宏那些事](./basic_content/macro)[-&gt;git](basic_content/const)
+- [函数指针那些事]()[-&gt;git](./basic_content/func_pointe)  待
+- [纯虚函数和抽象类那些事](./basic_content/abstract/README.md)[-&gt;git](./basic_content/virtual)
+- [`vptr_vtable` 那些事](./basic_content/vptr_vtable/README.md)[-&gt;git](./basic_content/vptr_vtable)
+- [`virtual` 那些事](./basic_content/virtual/README.md)[-&gt;git](./basic_content/virtual)
+- [`volatile` 那些事](./basic_content/volatile/README.md)[-&gt;git](basic_content//volatile)
+- [`assert` 那些事](./basic_content/assert/README.md)[-&gt;git](basic_content/const)
+- [位域那些事](./basic_content/bit/README.md)[-&gt;git](./basic_content/bit) 待
+- [`extern` 那些事](./basic_content/extern/README.md)[-&gt;git](./basic_content/extern)
+- [`struct` 那些事](./basic_content/struct/README.md)[-&gt;git](./basic_content/struct)
+- [`struct` 与 `class` 那些事](./basic_content/struct_class/README.md)[-&gt;git](./basic_content/struct_class)
+- [`union` 那些事](./basic_content/union/README.md)[-&gt;git](./basic_content/union) 待
+- [`c` 实现 `c++` 多态那些事](./basic_content/c_poly/README.md)[-&gt;git](./basic_content/c_poly)
+- [`explicit` 那些事](./basic_content/explicit/README.md)[-&gt;git](./basic_content/explicit) 待
+- [`friend` 那些事](./basic_content/friend/README.md)[-&gt;git](./basic_content/friend)
+- [`using` 那些事](./basic_content/using/README.md)[-&gt;git](./basic_content/using)
+- [`::` 那些事](./basic_content/maohao/README.md)[-&gt;git](./basic_content/maohao)
+- [`enum` 那些事](./basic_content/enum/README.md)[-&gt;git](./basic_content/enum)
+- [`decltype` 那些事](./basic_content/decltype/README.md)[-&gt;git](./basic_content/decltype)
+- [引用与指针那些事](./basic_content/pointer_refer/README.md)[-&gt;git](./basic_content/pointer_refer)
+- [宏那些事](./basic_content/macro/README.md)[-&gt;git](./basic_content/macro)
+
+---
+
+---
 
 ### 2.实战系列
 

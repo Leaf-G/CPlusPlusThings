@@ -1,14 +1,8 @@
 # 一文搞懂C和C++中struct
 
-## 关于作者：
-
-个人公众号：
-
-![](../img/wechat.jpg)
-
 ## 1.C中struct
 
-- 在C中struct只单纯的用作数据的复合类型，也就是说，在结构体声明中只能将数据成员放在里面，而不能将函数放在里面。 
+- 在C中struct只单纯的用作数据的复合类型，也就是说，在结构体声明中只能将数据成员放在里面，而不能将函数放在里面。
 - 在C结构体声明中不能使用C++访问修饰符，如：public、protected、private 而在C++中可以使用。
 - 在C中定义结构体变量，如果使用了下面定义必须加struct。
 - C的结构体不能继承（没有这一概念）。
@@ -72,7 +66,7 @@ I am Base func
 
 ```c++
 struct Student {
-    
+  
 };
 //Student(){}
 struct Student s; //ok
@@ -83,7 +77,7 @@ Student s;  //ok
 
 ```c++
 struct Student {
-    
+  
 };
 Student(){}
 struct Student s; //ok
@@ -93,14 +87,14 @@ Student s;  //error
 > 情形二：使用typedef定义结构体别名
 
 ```c++
-typedef struct Base1 {         
+typedef struct Base1 {     
     int v1;
     int v3;
     public:     //显示声明public
     int v2;
-    void print(){       
+    void print(){   
         printf("%s\n","hello world");
-    };    
+    };  
 }B;
 //void B() {}  //error! 符号 "B" 已经被定义为一个 "struct Base1" 的别名
 ```
@@ -111,15 +105,15 @@ typedef struct Base1 {
 #include<iostream>
 #include<stdio.h>
 
-struct Base {         
+struct Base {     
     int v1;
 //    private:   //error!
         int v3;
     public:     //显示声明public
         int v2;
-    void print(){       
+    void print(){   
         printf("%s\n","hello world");
-    };    
+    };  
 };
 
 int main() {
@@ -142,23 +136,23 @@ int main() {
 ```c++
 #include<iostream>
 #include<stdio.h>
-struct Base {         
+struct Base {     
     int v1;
 //    private:   //error!
         int v3;
     public:   //显示声明public
         int v2;
-    virtual void print(){       
+    virtual void print(){   
         printf("%s\n","Base");
-    };    
+    };  
 };
-struct Derived:Base {         
+struct Derived:Base {     
 
     public:
         int v2;
-    void print(){       
+    void print(){   
         printf("%s\n","Derived");
-    };    
+    };  
 };
 int main() {
     Base *b=new Derived();
@@ -175,26 +169,26 @@ int main() {
 #include<iostream>
 #include<stdio.h>
 
-struct Base {         
+struct Base {     
     int v1;
 //    private:   //error!
         int v3;
     public:     //显示声明public
         int v2;
-    void print(){       
+    void print(){   
         printf("%s\n","hello world");
-    };    
+    };  
 };
 
-typedef struct Base1 {         
+typedef struct Base1 {     
     int v1;
 //    private:   //error!
         int v3;
     public:     //显示声明public
         int v2;
-    void print(){       
+    void print(){   
         printf("%s\n","hello world");
-    };    
+    };  
 }B;
 void Base(){
     printf("%s\n","I am Base func");
@@ -212,16 +206,17 @@ int main() {
     return 0;
 }
 ```
+
 完整代码见：[struct_func_func.cpp](./struct_func_func.cpp)
 
 ## 3.总结
 
 ### C和C++中的Struct区别
 
-| C                                                      | C++                                                          |
-| ------------------------------------------------------ | ------------------------------------------------------------ |
-| 不能将函数放在结构体声明                               | 能将函数放在结构体声明                                       |
-| 在C结构体声明中不能使用C++访问修饰符。                 | public、protected、private 在C++中可以使用。                 |
-| 在C中定义结构体变量，如果使用了下面定义必须加struct。  | 可以不加struct                                               |
-| 结构体不能继承（没有这一概念）。                       | 可以继承                                                     |
+| C                                                      | C++                                                            |
+| ------------------------------------------------------ | -------------------------------------------------------------- |
+| 不能将函数放在结构体声明                               | 能将函数放在结构体声明                                         |
+| 在C结构体声明中不能使用C++访问修饰符。                 | public、protected、private 在C++中可以使用。                   |
+| 在C中定义结构体变量，如果使用了下面定义必须加struct。  | 可以不加struct                                                 |
+| 结构体不能继承（没有这一概念）。                       | 可以继承                                                       |
 | 若结构体的名字与函数名相同，可以正常运行且正常的调用！ | 若结构体的名字与函数名相同，使用结构体，只能使用带struct定义！ |

@@ -1,13 +1,5 @@
 # 深入浅出C++虚函数的vptr与vtable
 
-## 关于作者：
-
-个人公众号：
-
-![](../img/wechat.jpg)
-
-
-
 ## 1.基础理论
 
 为了实现虚函数，C ++使用一种称为虚拟表的特殊形式的后期绑定。该虚拟表是用于解决在动态/后期绑定方式的函数调用函数的查找表。虚拟表有时会使用其他名称，例如“vtable”，“虚函数表”，“虚方法表”或“调度表”。
@@ -96,7 +88,7 @@ Fun getAddr(void* obj,unsigned int offset)
     cout<<"======================="<<endl;
     void* vptr_addr = (void *)*(unsigned long *)obj;  //64位操作系统，占8字节，通过*(unsigned long *)obj取出前8字节，即vptr指针
     printf("vptr_addr:%p\n",vptr_addr);
-    
+  
     /**
      * @brief 通过vptr指针访问virtual table，因为虚表中每个元素(虚函数指针)在64位编译器下是8个字节，因此通过*(unsigned long *)vptr_addr取出前8字节，
      * 后面加上偏移量就是每个函数的地址！
@@ -120,7 +112,7 @@ int main(void)
     pt->fun1();
     cout<<"基类引用指向派生类实例并调用虚函数"<<endl;
     p.fun1();
-    
+  
     // 手动查找vptr 和 vtable
     Fun f1 = getAddr(pt, 0);
     (*f1)();
@@ -162,11 +154,11 @@ pt->fun1();
 
 其过程为：首先程序识别出fun1()是个虚函数，其次程序使用pt->vptr来获取Derived的虚拟表。第三，它查找Derived虚拟表中调用哪个版本的fun1()。这里就可以发现调用的是Derived::fun1()。因此pt->fun1()被解析为Derived::fun1()!
 
-除此之外，上述代码大家会看到，也包含了手动获取vptr地址，并调用vtable中的函数，那么我们一起来验证一下上述的地址与真正在自动调用vtable中的虚函数，比如上述`pt->fun1()`的时候，是否一致！
+除此之外，上述代码大家会看到，也包含了手动获取vptr地址，并调用vtable中的函数，那么我们一起来验证一下上述的地址与真正在自动调用vtable中的虚函数，比如上述 `pt->fun1()`的时候，是否一致！
 
-这里采用gdb调试，在编译的时候记得加上`-g`。
+这里采用gdb调试，在编译的时候记得加上 `-g`。
 
-通过`gdb vptr`进入gdb调试页面，然后输入`b Derived::fun1`对fun1打断点，然后通过输入r运行程序到断点处，此时我们需要查看调用栈中的内存地址，通过`disassemable fun1`可以查看当前有关fun1中的相关汇编代码，我们看到了`0x0000000000400ea8`，然后再对比上述的结果会发现与手动调用的fun1一致，fun2类似，以此证明代码正确!
+通过 `gdb vptr`进入gdb调试页面，然后输入 `b Derived::fun1`对fun1打断点，然后通过输入r运行程序到断点处，此时我们需要查看调用栈中的内存地址，通过 `disassemable fun1`可以查看当前有关fun1中的相关汇编代码，我们看到了 `0x0000000000400ea8`，然后再对比上述的结果会发现与手动调用的fun1一致，fun2类似，以此证明代码正确!
 
 gdb调试信息如下：
 
@@ -216,4 +208,3 @@ Dump of assembler code for function Derived::fun2():
    0x0000000000400efe <+42>:	retq   
 End of assembler dump.
 ```
-
